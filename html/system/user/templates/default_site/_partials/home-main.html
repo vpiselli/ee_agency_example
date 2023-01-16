@@ -1,0 +1,17 @@
+<section class="bg-white dark:bg-gray-900">
+    {exp:channel:entries channel="page" url_title="homepage"}
+        <div class="container mx-auto px-6 py-16 text-center">
+            <div class="mx-auto max-w-lg">
+                <h1 class="text-3xl font-bold text-gray-800 dark:text-white lg:text-4xl">{title}</h1>
+                <p class="mt-6 text-gray-500 dark:text-gray-300">{subtitle}</p>
+
+                <div class="mt-4">{page_content}</div>
+            </div>
+
+            <div class="mt-10 flex justify-center">
+                <img class="h-96 w-full rounded-xl object-cover lg:w-4/5"
+                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" />
+            </div>
+        </div>
+    {/exp:channel:entries}
+</section>

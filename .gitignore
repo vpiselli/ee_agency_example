@@ -1,0 +1,27 @@
+.DS_Store
+.env
+
+# Images
+images/avatars/
+!images/avatars/index.html
+images/captchas/
+!images/captchas/index.html
+# images/smileys/
+# !images/smileys/index.html
+images/member_photos/
+!images/member_photos/index.html
+images/signature_attachments/
+!images/signature_attachments/index.html
+images/pm_attachments/
+!images/pm_attachments/index.html
+
+# For security do not publish the following files
+system/expressionengine/config/database.php
+system/expressionengine/config/config.php
+
+# Caches
+sized/
+thumbs/
+_thumbs/
+!_thumbs/index.html
+*/expressionengine/cache/*

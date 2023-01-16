@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{if layout:title}{layout:title}{if:else}{site_name}{/if}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+
+<body class="flex items-center justify-center" style="background: #edf2f7;">
+    <div class="container">
+        <!-- Header -->
+        {header}
+
+        <!-- Page Content -->
+        {layout:contents}
+
+        <!-- Footer -->
+        {footer}
+    </div>
+</body>
+</html>
+

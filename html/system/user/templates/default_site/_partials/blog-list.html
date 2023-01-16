@@ -1,0 +1,94 @@
+<section class="bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-6 py-10">
+        <div class="text-center">
+            <h1 class="text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">From the blog</h1>
+
+            <p class="mx-auto mt-4 max-w-lg text-gray-500">
+                Salami mustard spice tea fridge authentic Chinese food dish salt tasty liquor. Sweet savory foodtruck pie.
+            </p>
+        </div>
+
+        <div class="my-8 grid grid-cols-1 gap-8 md:my-16 md:grid-cols-2 xl:grid-cols-3">
+            <!-- Blog card -->
+            {exp:channel:entries channel="blog" limit="{if segment_1 != 'blog'}3{if:else}3{/if}" disable="categories" paginate="bottom"}
+                <div>
+                    <div class="relative">
+                        {featured_image}
+                            <img class="h-64 w-full rounded-lg object-cover object-center lg:h-80"
+                                src="{url}"
+                                alt="{title}"
+                            />
+                        {/featured_image}
+
+                        <div class="absolute bottom-0 flex bg-white p-3 dark:bg-gray-900">
+                            <img class="h-10 w-10 rounded-full object-cover object-center"
+                                src="https://randomuser.me/api/portraits/men/97.jpg"
+                                alt="" />
+
+                            <div class="mx-4">
+                                <h1 class="text-sm text-gray-700 dark:text-gray-200">{author}</h1>
+                                <time
+                                    class="text-sm text-gray-500 dark:text-gray-400"
+                                    datetime="{entry_date format='%Y-%m-%d'}"
+                                >{entry_date format="%M %d, %Y"}</time>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="/blog/entry/{url_title}">
+                        <h1 class="mt-6 text-xl font-semibold text-gray-800 dark:text-white">{title}</h1>
+                    </a>
+
+                    <hr class="my-6 w-32 text-blue-500" />
+
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Blanditiis fugit dolorum amet dolores praesentium, alias nam? Tempore</p>
+
+                    <a href="/blog/entry/{url_title}" class="mt-4 inline-block text-blue-500 underline hover:text-blue-400">Read more</a>
+                </div>
+
+                {if segment_1 == 'blog'}
+                    {paginate}
+                        <div class="pagination col-span-full text-center mt-16">
+                            {pagination_links}
+                                <ul class="inline-flex space-x-2">
+                                    {previous_page}
+                                        <li>
+                                            <a href="{pagination_url}" class="flex items-center justify-center w-10 h-10 text-indigo-600 transition-colors duration-150 rounded-full focus:shadow-outline hover:bg-indigo-100">
+                                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                                            </a>
+                                        </li>
+                                    {/previous_page}
+
+                                    {page}
+                                        <li>
+                                            <a
+                                                href="{pagination_url}"
+                                                class="page-{pagination_page_number}
+                                                {if current_page}
+                                                    w-10 h-10 flex justify-center items-center border border-blue-600 rounded-full
+                                                    bg-blue-600 text-white
+                                                {if:else}
+                                                    w-10 h-10 flex justify-center items-center border border-blue-300 rounded-full
+                                                    hover:bg-blue-500 text-blue-500 hover:text-white
+                                                {/if}"
+                                            >{pagination_page_number}</a>
+                                        </li>
+                                    {/page}
+
+                                    {next_page}
+                                        <li>
+                                            <a href="{pagination_url}" class="flex items-center justify-center w-10 h-10 text-indigo-600 transition-colors duration-150 bg-white rounded-full focus:shadow-outline hover:bg-indigo-100">
+                                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                                            </a>
+                                        </li>
+                                    {/next_page}
+                                </ul>
+                            {/pagination_links}
+                        </div>
+                    {/paginate}
+                {/if}
+            {/exp:channel:entries}
+        </div>
+    </div>
+</section>
